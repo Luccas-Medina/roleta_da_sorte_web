@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleta da Sorte - Jogos de Sorteio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="header-text">
+                    <h1>🎰 Roleta da Sorte</h1>
+                    <p>Jogos de sorteio divertidos e interativos</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Promotional Banner -->
+    <div class="promo-banner">
+        <p class="promo-text">Experimente diferentes jogos de sorteio - Totalmente Grátis!</p>
+    </div>
+
+    <div class="container">
+        <!-- Side Ads (Desktop) -->
+        <aside class="side-ad left-ad">
+            <div class="ad-placeholder">Anúncio Lateral Esquerdo</div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Game Selection Section -->
+            <section class="game-selection" id="gameSelection">
+                <div class="selection-container">
+                    <h2>Escolha um Jogo</h2>
+                    <p class="selection-subtitle">Selecione o tipo de sorteio que deseja realizar</p>
+                    
+                    <div class="games-grid">
+                        <button class="game-card active" data-game="roleta">
+                            <div class="game-icon">🎰</div>
+                            <h3>Roleta da Sorte</h3>
+                            <p>Gire a roleta e deixe o destino decidir</p>
+                        </button>
+                        
+                        <button class="game-card disabled" data-game="garrafa">
+                            <div class="game-icon">🍾</div>
+                            <h3>Girar Garrafa</h3>
+                            <p>Em breve...</p>
+                        </button>
+                        
+                        <button class="game-card disabled" data-game="numeros">
+                            <div class="game-icon">🔢</div>
+                            <h3>Sorteio de Números</h3>
+                            <p>Em breve...</p>
+                        </button>
+                        
+                        <button class="game-card disabled" data-game="dados">
+                            <div class="game-icon">🎲</div>
+                            <h3>Jogar Dados</h3>
+                            <p>Em breve...</p>
+                        </button>
+                        
+                        <button class="game-card disabled" data-game="nomes">
+                            <div class="game-icon">📝</div>
+                            <h3>Sorteio de Nomes</h3>
+                            <p>Em breve...</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Roulette Game Section -->
+            <section class="roulette-game" id="rouletteGame" style="display: none;">
+                <button class="back-button" id="backToSelection">
+                    ← Voltar aos Jogos
+                </button>
+
+                <div class="roulette-container">
+                    <!-- Left Side: Roulette Wheel -->
+                    <div class="roulette-display">
+                        <h2 class="roulette-title" id="rouletteTitle">Roleta da Sorte</h2>
+                        <div class="wheel-container">
+                            <canvas id="rouletteCanvas" width="400" height="400"></canvas>
+                            <div class="pointer"></div>
+                        </div>
+                        <button class="spin-button" id="spinButton">
+                            <span class="spin-text">GIRAR</span>
+                        </button>
+                        <div class="result-display" id="resultDisplay" style="display: none;">
+                            <div class="result-content">
+                                <div class="result-label">Resultado:</div>
+                                <div class="result-text" id="resultText"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Options List -->
+                    <div class="options-panel">
+                        <h3>Opções da Roleta</h3>
+                        <p class="options-subtitle">Adicione ou edite as opções da sua roleta</p>
+                        
+                        <div class="title-input-group">
+                            <label for="titleInput">Título da Roleta (opcional)</label>
+                            <input 
+                                type="text" 
+                                id="titleInput" 
+                                placeholder="Ex: Escolher filme, Decisões..."
+                                maxlength="50"
+                            >
+                        </div>
+
+                        <div class="add-option-group">
+                            <input 
+                                type="text" 
+                                id="optionInput" 
+                                placeholder="Digite uma opção e pressione Enter"
+                                maxlength="30"
+                            >
+                            <button id="addOptionBtn" class="btn-add">Adicionar</button>
+                        </div>
+
+                        <div class="options-counter">
+                            <span id="optionsCount">3</span> opções
+                        </div>
+
+                        <div class="options-list" id="optionsList">
+                            <!-- Options will be dynamically added here -->
+                        </div>
+
+                        <div class="options-actions">
+                            <button id="clearAllBtn" class="btn-secondary">Limpar Tudo</button>
+                            <button id="resetDefaultBtn" class="btn-secondary">Restaurar Padrão</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Side Ads (Desktop) -->
+        <aside class="side-ad right-ad">
+            <div class="ad-placeholder">Anúncio Lateral Direito</div>
+        </aside>
+    </div>
+
+    <!-- Mobile Bottom Ad -->
+    <div class="mobile-ad-bottom" id="mobileAdBottom">
+        <div class="ad-placeholder">Anúncio Mobile Bottom</div>
+    </div>
+
+    <!-- Footer Ad (Desktop) -->
+    <footer class="footer-ad">
+        <div class="ad-placeholder">Anúncio Footer</div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
