@@ -373,15 +373,11 @@ function spinRoulette() {
     
     state.isSpinning = true;
     const spinButton = document.getElementById('spinButton');
-    const resultDisplay = document.getElementById('resultDisplay');
     
     // Update button state
     spinButton.disabled = true;
     spinButton.classList.add('spinning');
     spinButton.querySelector('.spin-text').textContent = 'GIRANDO';
-    
-    // Hide previous result
-    resultDisplay.style.display = 'none';
     
     // Calculate spin parameters (similar to Flutter version)
     const extraRotations = 5 + Math.random() * 3; // 5 to 8 full rotations
@@ -410,14 +406,6 @@ function spinRoulette() {
             // Normalize angle
             state.rotationAngle = state.rotationAngle % (2 * Math.PI);
             
-            // Calculate winning option
-            const normalizedAngle = (2 * Math.PI - state.rotationAngle + Math.PI / 2) % (2 * Math.PI);
-            const sweepAngle = (2 * Math.PI) / state.rouletteOptions.length;
-            const winningIndex = Math.floor(normalizedAngle / sweepAngle) % state.rouletteOptions.length;
-            
-            // Show result
-            showResult(state.rouletteOptions[winningIndex].text);
-            
             // Reset button
             state.isSpinning = false;
             spinButton.disabled = false;
@@ -427,20 +415,6 @@ function spinRoulette() {
     }
     
     animate();
-}
-
-function showResult(resultText) {
-    const resultDisplay = document.getElementById('resultDisplay');
-    const resultTextElement = document.getElementById('resultText');
-    
-    resultTextElement.textContent = resultText;
-    resultDisplay.style.display = 'block';
-    
-    // Add animation
-    resultDisplay.style.animation = 'none';
-    setTimeout(() => {
-        resultDisplay.style.animation = 'slideIn 0.5s ease';
-    }, 10);
 }
 
 // ========================================

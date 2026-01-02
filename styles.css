@@ -276,27 +276,16 @@ header p {
 
 .pointer {
     position: absolute;
-    top: 0;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 30px solid #ff4444;
-    z-index: 10;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
-
-.pointer::after {
-    content: '';
-    position: absolute;
-    top: -30px;
-    left: -20px;
-    width: 40px;
-    height: 30px;
-    border: 2px solid white;
-    border-bottom: none;
+    border-top: 35px solid #ff4444;
+    z-index: 100;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
 }
 
 .spin-button {
