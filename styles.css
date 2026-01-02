@@ -642,8 +642,32 @@ header p {
         font-size: 1.25rem;
     }
     
-    .result-text {
-        font-size: 1.25rem;
+    /* Mobile: Stack add option input and button */
+    .add-option-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .btn-add {
+        width: 100%;
+    }
+    
+    /* Mobile: Stack action buttons */
+    .options-actions {
+        flex-direction: column;
+    }
+    
+    .btn-secondary {
+        width: 100%;
+    }
+    
+    /* Mobile: Adjust options panel */
+    .options-panel {
+        padding: 1rem;
+    }
+    
+    .options-panel h3 {
+        font-size: 1.1rem;
     }
 }
 
@@ -654,10 +678,18 @@ header p {
     
     .promo-banner {
         padding: 0.75rem 1rem;
+        flex-direction: column;
+        gap: 0.75rem;
     }
     
     .promo-text {
         font-size: 0.875rem;
+        text-align: center;
+    }
+    
+    .promo-btn {
+        width: 100%;
+        text-align: center;
     }
     
     .game-selection,
@@ -667,6 +699,23 @@ header p {
     
     .wheel-container {
         max-width: 280px;
+    }
+    
+    /* Extra small screens: Even more compact */
+    .options-panel {
+        padding: 0.75rem;
+    }
+    
+    .title-input-group input,
+    .add-option-group input {
+        font-size: 0.95rem;
+        padding: 0.65rem;
+    }
+    
+    .btn-add,
+    .btn-secondary {
+        padding: 0.65rem;
+        font-size: 0.9rem;
     }
 }
 
